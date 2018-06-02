@@ -6,6 +6,6 @@ object Ex001 extends Answer {
     (1 until n).filter(k => k % div1 == 0 || k % div2 == 0).sum
 
   def run(): Any = {
-    sumUntil(10, 3, 5)
+    sumUntil(1000, 3, 5)
   }
 }
