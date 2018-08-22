@@ -16,7 +16,6 @@ object Ex005 extends Answer {
       else if (n <= start) { Map(n -> pow) }
       else if (pow == 0) { subFactorDict(n, start + 1) }
       else {
-        println(n, start)
         subFactorDict(n / Math.pow(start, pow).toInt, 2) + (start -> pow)
       }
     }
