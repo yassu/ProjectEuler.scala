@@ -2,6 +2,6 @@ package projecteuler
 import projecteuler.exercises._
 
 object ProjectEuler extends App {
-  println(Ex010.run())
+  println(Ex012.run())
 }
 
