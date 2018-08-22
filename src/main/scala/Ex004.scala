@@ -13,8 +13,8 @@ object Ex004 extends Answer {
 
   // a > 0 かつ b >= 0を仮定する
   def powInt(a: Int, b: Int): Int =
-    if (b == 0) 1
-    else a * powInt(a, b - 1)
+    if (b == 0) { 1 }
+    else { a * powInt(a, b - 1) }
 
   def result(digit: Int): Int = {
     val numbers = (powInt(10, digit - 1) until powInt(10, digit)).toList

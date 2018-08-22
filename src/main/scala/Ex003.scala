@@ -11,19 +11,15 @@ object Ex003 extends Answer {
     val n = one
     val n1 = next(n, number)
     def sqrtHelper(n: BigInt, n1: BigInt): BigInt =
-      if ((n1 - n).abs <= one)
-        List(n1,n).max
-      else
-        sqrtHelper(n1, next(n1, number))
+      if ((n1 - n).abs <= one) { List(n1,n).max }
+      else { sqrtHelper(n1, next(n1, number)) }
     sqrtHelper(n, n1)
   }
 
   def factor(n: BigInt): List[BigInt] = {
     val dividedNumbers = (2 until this.sqrt(n).toInt).filter(n % _ == 0)
-    if (n < 2)
-      List()
-    else if (dividedNumbers.isEmpty)
-      List(n)
+    if (n < 2) { List() }
+    else if (dividedNumbers.isEmpty) { List(n) }
     else {
       val minFac = dividedNumbers.head
       minFac :: factor(n / minFac)

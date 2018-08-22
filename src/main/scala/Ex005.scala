@@ -8,19 +8,19 @@ object Ex005 extends Answer {
       // TODO; (0 to n) じゃなくて (0 to (もっと小さい値))にする
       (0 to n).filter(j => n % Math.round(Math.pow(a, j)) == 0).last
 
-    def _factorDict(n: Int, start: Int): Map[Int, Int] = {
+    def subFactorDict(n: Int, start: Int): Map[Int, Int] = {
       require (n >= 1)
       val pow = power(n, start)
 
-      if (n == 1) Map()
-      else if (n <= start) Map(n -> pow)
-      else if (pow == 0) _factorDict(n, start + 1)
+      if (n == 1) { Map() }
+      else if (n <= start) { Map(n -> pow) }
+      else if (pow == 0) { subFactorDict(n, start + 1) }
       else {
         println(n, start)
-        _factorDict(n / Math.pow(start, pow).toInt, 2) + (start -> pow)
+        subFactorDict(n / Math.pow(start, pow).toInt, 2) + (start -> pow)
       }
     }
-    _factorDict(n, 2)
+    subFactorDict(n, 2)
   }
 
   def result(maxN: Int): Int = {
