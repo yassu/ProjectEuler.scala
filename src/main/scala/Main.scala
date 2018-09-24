@@ -47,6 +47,6 @@ object ProjectEuler extends App {
     println("Spend " + (System.currentTimeMillis - start) / 1000.0 + " sec")
   }
 
-  runOne(Ex022)
+  runOne(Ex023)
 }
 
